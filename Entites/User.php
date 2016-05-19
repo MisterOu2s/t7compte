@@ -12,7 +12,7 @@ class User{
      */
 	private $id;
 	/**
-	 * @
+	 * @String
 	 */
 	private $prenom;
 	private $nom;

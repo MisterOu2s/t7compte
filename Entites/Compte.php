@@ -12,7 +12,7 @@ class Compte{
      */
 	private $id;
 	/**
-	 * @
+	 * @Integer
 	 */
 	private $numeroDeCompte;
 	private $balance;

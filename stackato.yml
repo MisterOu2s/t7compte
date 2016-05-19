@@ -6,9 +6,5 @@ memory: 256
 services:
   ${name}-db:
     type: mysql
-hooks:
-  post-staging:
-  # setting up in filesystem
-  - sh vendor/bin/doctrine orm:schema-tool:create
 timeout: 180
 disk_quota: 2048
