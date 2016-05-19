@@ -2,10 +2,9 @@
 
 
 /** @Entity
- *  @Table(name="user")
+ * @Table(name="utilisateurs")
  */
-class User{
-	
+class Utilisateur{
     /**
      * @Id @Column(type="integer")
      * @GeneratedValue

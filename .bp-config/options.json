@@ -1,7 +1,10 @@
 {
 	"WEB_SERVER": "nginx",
-    "PHP_MODULES": [],
-    "PHP_EXTENSIONS": ["bz2", "zlib", "curl", "mcrypt", "pdo", "pdo_mysql"],
+	"PHP_VERSION": "{PHP_55_LATEST}",
+    "ZEND_EXTENSIONS": ["opcache"],
+    "COMPOSER_VENDOR_DIR": "vendor/",
+    "COMPOSER_INSTALL_OPTIONS":["--no-scripts", "--no-dev"],
+    "ADDITIONAL_PREPROCESS_CMDS":"php $HOME/php/bin/composer.phar install --no-dev --no-progress",
     "HTTP_PROXY": "192.168.0.51:3128",
     "HTTPS_PROXY": "192.168.0.51:3128"
 }
