@@ -11,17 +11,44 @@ class Utilisateur{
      */
 	private $id;
 	/**
-	 * @String
+	 * @Column(type="string")
 	 */
 	private $prenom;
+	/** 
+	 * @Column(type="string")
+	 */
 	private $nom;
+	/** 
+	 * @Column(type="string")
+	 */
 	private $motDePasse;
+	/** 
+	 * @Column(type="string")
+	 */
 	private $adresse;
+	/** 
+	 * @Column(type="string")
+	 */
 	private $complementAdresse;
+	/** 
+	 * @Column(type="integer")
+	 */
 	private $codePostal;
+	/**
+	 * @Column(type="string")
+	 */
 	private $ville;
+	/**
+	 * @Column(type="string")
+	 */
 	private $pays;
+	/**
+	 * @Column(type="integer")
+	 */
 	private $numeroDeTelephone;
+	/**
+	 * @Column(type="string")
+	 */
 	private $email;
 
 	public function getId()
