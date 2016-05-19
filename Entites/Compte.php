@@ -7,7 +7,8 @@
 class Compte{
 	
     /**
-     * @Id @Column(type="integer")
+     * @Id 
+     * @Column(type="integer")
      * @GeneratedValue
      */
 	private $id;
@@ -24,9 +25,35 @@ class Compte{
 	 */
 	private $typeCompte;
 	/**
-	 * @Column(type"integer")
+	 * @Column(type="integer")
 	 */
 	private $decouvertAutorise;
+
+    /**
+     * @ManyToMany(targetEntity="Utilisateur", mappedBy="compte")
+     */
+    private $utilisateurs;
+
+    public function __construct() {
+        $this->utilisateurs = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    public function getUtilisateurs()
+    {
+    	return $this->utilisateurs;
+    }
+
+    public function addUtilisateur($utilisateur)
+    {
+    	$this->utilisateurs->add($utilisateur);
+    	return $this;
+    }
+
+    public function removeUtilisateur($utilisateur)
+    {
+    	$this->utilisateurs->remove($utilisateur);
+    	return $this;
+    }
 
 	public function getId()
 	{

@@ -2,7 +2,7 @@
 
 
 /** @Entity
- * @Table(name="utilisateurs")
+ * @Table(name="utilisateur")
  */
 class Utilisateur{
     /**
@@ -50,6 +50,16 @@ class Utilisateur{
 	 * @Column(type="string")
 	 */
 	private $email;
+
+	/**
+     * @ManyToMany(targetEntity="Compte", inversedBy="utilisateur")
+     * @JoinTable(name="utilisateur_compte")
+     */
+    private $comptes;
+
+    public function __construct() {
+        $this->comptes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
 	public function getId()
 	{

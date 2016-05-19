@@ -4,19 +4,21 @@
 /** @Entity
  *  @Table(name="transaction")
  */
-class User{
+class Transaction{
 	
     /**
      * @Id @Column(type="integer")
      * @GeneratedValue
      */
 	private $id;
-	/**
-	 * @Column(type="integer")
-	 */
+    /**
+     * @ManyToOne(targetEntity="Compte")
+     * @JoinColumn(name="compte_emission_id", referencedColumnName="id")
+     */
 	private $compteEmission;
 	/**
-	 * @Column(type="integer")
+	 * @ManyToOne(targetEntity="Compte")
+	 * @JoinColumn(name="compte_reception_id", referencedColumnName="id")
 	 */
 	private $compteReception;
 	/**
@@ -27,6 +29,11 @@ class User{
 	 * @Column(type="datetime")
 	 */
 	private $dateTransaction;
+
+	public function __construct()
+	{
+		$dateTransaction = new \DateTime();
+	}
 
 	public function getId()
 	{
