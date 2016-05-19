@@ -8,7 +8,7 @@ use Doctrine\ORM\EntityManager;
 $paths = array(__DIR__."/Entites");
 $isDevMode = false;
 
-$bddparam = json_decode(getenv("STACKATO_SERVICES"),true)["bdd"];
+$bddparam = json_decode(getenv("VCAP_SERVICES"),true)["mysql"][0]["credentials"];
 
 // the connection configuration
 $dbParams = array(

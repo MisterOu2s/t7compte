@@ -2,10 +2,9 @@
 
 
 /** @Entity
- *  @Table(name="user")
+ * @Table(name="utilisateur")
  */
-class User{
-	
+class Utilisateur{
     /**
      * @Id @Column(type="integer")
      * @GeneratedValue
@@ -51,6 +50,16 @@ class User{
 	 * @Column(type="string")
 	 */
 	private $email;
+
+	/**
+     * @ManyToMany(targetEntity="Compte", inversedBy="utilisateur")
+     * @JoinTable(name="utilisateur_compte")
+     */
+    private $comptes;
+
+    public function __construct() {
+        $this->comptes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
 	public function getId()
 	{
