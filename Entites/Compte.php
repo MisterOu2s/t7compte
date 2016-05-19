@@ -15,8 +15,17 @@ class Compte{
 	 * @Integer
 	 */
 	private $numeroDeCompte;
+	/**
+	 * @Column(type="integer")
+	 */
 	private $balance;
+	/**
+	 * @Column(type="string")
+	 */
 	private $typeCompte;
+	/**
+	 * @Column(type"integer")
+	 */
 	private $decouvertAutorise;
 
 	public function getId()

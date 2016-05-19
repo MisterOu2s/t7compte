@@ -12,11 +12,20 @@ class User{
      */
 	private $id;
 	/**
-	 * @String
+	 * @Column(type="integer")
 	 */
 	private $compteEmission;
+	/**
+	 * @Column(type="integer")
+	 */
 	private $compteReception;
+	/**
+	 * @Column(type="integer")
+	 */
 	private $montant;
+	/**
+	 * @Column(type="datetime")
+	 */
 	private $dateTransaction;
 
 	public function getId()
